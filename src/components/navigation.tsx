@@ -1,8 +1,11 @@
-import { Box, Container } from "@chakra-ui/react";
-import { Input } from "@chakra-ui/react";
-import { Heading } from "@chakra-ui/react";
+import { Box, Container, Heading } from "@chakra-ui/react";
+import SearchInput from "./searchInput"; 
 
-export const Navigation = () => {
+interface NavigationProps {
+  onSearch: (query: string) => void;
+}
+
+export const Navigation = ({ onSearch }: NavigationProps) => {
   return (
     <Box width="100vw">
       <Box
@@ -20,7 +23,9 @@ export const Navigation = () => {
             <Heading color="white">MIXØ.XYZ</Heading>
           </Box>
         </Container>
+        <SearchInput onSearch={onSearch} />
       </Box>
     </Box>
   );
 };
+

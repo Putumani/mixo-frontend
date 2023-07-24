@@ -18,3 +18,4 @@ export const HomeContainer = ({
     </Box>
   );
 };
+
